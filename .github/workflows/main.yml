@@ -2,9 +2,6 @@ name: Node Image to ACR
 
 on:
   workflow_dispatch:
-#   push:
-#     branches:
-#       - main
   
 jobs:
   build-and-push:
@@ -21,6 +18,6 @@ jobs:
           password: ${{ secrets.ACR_PASSWORD }}
           
       - run:
-         docker build -t $DOCKER_IMAGE .
+         docker build -t nodejs-docker ""
          docker tag $DOCKER_IMAGE $ACR_NAME.azurecr.io/$DOCKER_IMAGE
          docker push $ACR_NAME.azurecr.io/$DOCKER_IMAGE
