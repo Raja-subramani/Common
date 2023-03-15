@@ -18,6 +18,6 @@ jobs:
           password: ${{ secrets.ACR_PASSWORD }}
           
       - run:
-         docker build -t nodejs-docker ""
-         docker tag $DOCKER_IMAGE $ACR_NAME.azurecr.io/$DOCKER_IMAGE
-         docker push $ACR_NAME.azurecr.io/$DOCKER_IMAGE
+         docker build -t nodejs-docker "/home/runner/work/Common/Common/src"
+#          docker tag .azurecr.io/$DOCKER_IMAGE
+#          docker push $ACR_NAME.azurecr.io/$DOCKER_IMAGE
